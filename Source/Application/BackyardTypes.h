@@ -1,5 +1,40 @@
 #pragma once
 
-#include <Utility/Debug.h>
-#include <Utility/Utility.h>
-#include <Utility/Types.h>
+#include "Core.h"
+
+struct HPlayerState : public HHandle {};
+
+enum class EPlayerState : uint32
+{
+	None,
+	BecomingGameServer,
+	GameServer,
+	BecomingGameClient,
+	GameClient,
+	GameServerStarted
+};
+
+struct FPendingClient
+{
+	float ConnectTime;
+	HPlayerState Player;
+};
+
+struct FServerState
+{
+	HPlayerState ConnectedClients;
+	vector<FPendingClient> PendingClients;
+};
+
+struct FClientState
+{
+	HPlayerState Server;	
+};
+
+struct FPlayerState
+{
+	EPlayerState State;
+
+	FServerState ServerState;
+	FClientState ClientState;
+};

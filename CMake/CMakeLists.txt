@@ -53,5 +53,18 @@ A1Utility
 set_target_properties(A1Backyard PROPERTIES
 	ENABLE_EXPORTS 0
 	RUNTIME_OUTPUT_DIRECTORY ${A1_BACKYARD_BUILD}
-	VS_DEBUGGER_WORKING_DIRECTORY ${A1_BACKYARD_BUILD}/Debug
+	VS_DEBUGGER_WORKING_DIRECTORY ${A1_BACKYARD_BUILD}
 )
+
+if(WIN32)
+	if(NOT EXISTS ${A1_BACKYARD_BUILD}/libcrypto-1_1-x64.dll)
+		file(COPY ${A1_THIRDPARTY}/OpenSSL/bin/libcrypto-1_1-x64.dll DESTINATION ${A1_BACKYARD_BUILD})
+	endif()
+	if(NOT EXISTS ${A1_BACKYARD_BUILD}/Debug/icuuc64.dll)
+		file(COPY ${A1_THIRDPARTY}/A1Utility/ThirdParty/icu/binWin64/icuuc64.dll DESTINATION ${A1_BACKYARD_BUILD})
+	endif()
+	if(NOT EXISTS ${A1_BACKYARD_BUILD}/Debug/icudt64.dll)
+		file(COPY ${A1_THIRDPARTY}/A1Utility/ThirdParty/icu/binWin64/icudt64.dll DESTINATION ${A1_BACKYARD_BUILD})
+	endif()
+endif()
+
