@@ -1,4 +1,5 @@
-#include "Backyard.h"
+#include "System/Backyard/Backyard.h"
+#include "System/Network/Network.h"
 
 #include <iostream>
 
@@ -11,14 +12,20 @@ int main(const int argc, char* argv[])
 	(void)argc;
 	(void)argv;
 
+	FTimeUtility::Impl::InitializeTime();
+
 	string HelpInfo;
 	HelpInfo += "Available commands:\n";
 	HelpInfo += "exit\n";
+	
+	SNetwork Network;	
+	Debugf("Initializing Network...");
+	Network.Initialize();
 
-	SBackyard Backyard;
+	SBackyard Backyard(Network);
 	Debugf("Initializing Backyard...");
 	Backyard.Initialize();
-
+	
 	while(!ExitFlag)
 	{
 		char LineBuffer[1024] = { 0 };
@@ -36,6 +43,10 @@ int main(const int argc, char* argv[])
 
 	Debugf("Deinitializing Backyard...");
 	Backyard.Deinitialize();
+	
+	Debugf("Deinitializing Network...");
+	Network.Deinitialize();
+
 	
 	return 0;
 }
