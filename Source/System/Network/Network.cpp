@@ -5,6 +5,7 @@
 namespace NerworkLocal
 {
 	constexpr uint16 BackyardServerPort = 27030;
+	constexpr size UnderflowProtectedBufferSize = 1024;
 }
 
 void SNetwork::Initialize()
@@ -41,10 +42,15 @@ void SNetwork::BackyardResponseImpl(hash FunctionHash, FNetworkAddress Address, 
 
 void SNetwork::ProcessBackyardRPC(const vector<byte>& InBytes, const FNetworkAddress& SourceAddress)
 {
+	byte UnderflowProtectedBytes[NerworkLocal::UnderflowProtectedBufferSize];
+	const size Size = FMathUtility::Min(NerworkLocal::UnderflowProtectedBufferSize, InBytes.size());
+	Warnf(Size == InBytes.size(), "RPC contains too much bytes");
+	memcpy(UnderflowProtectedBytes, InBytes.data(), Size);
+	
 	hash FunctionHash;
 	vector<byte> Bytes;
 
-	const byte* Pointer = InBytes.data();
+	const byte* Pointer = UnderflowProtectedBytes;
 	FSerializationUtility::Deserialize(Pointer, FunctionHash);
 	FSerializationUtility::Deserialize(Pointer, Bytes);
 

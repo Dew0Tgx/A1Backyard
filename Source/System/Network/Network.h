@@ -55,6 +55,7 @@ private:
 	HNetworkServer BackyardServerHandle{ HHandle::Empty };
 
 	void BackyardResponseImpl(hash FunctionHash, FNetworkAddress Address, const vector<byte> & Bytes);
+	
 	void ProcessBackyardRPC(const vector<byte>& InBytes, const FNetworkAddress& SourceAddress);
 	
 };
