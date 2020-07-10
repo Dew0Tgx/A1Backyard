@@ -1521,7 +1521,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        Serialize(Out, Value._Target);
+        // (blacklisted)Serialize(Out, Value._Target);
     }
 
     template <>
@@ -1529,7 +1529,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        Deserialize(InOutPointer, Out._Target);
+        // (blacklisted)Deserialize(InOutPointer, Out._Target);
     }
     //********************************* Generated for struct std::ctype_base *********************************
     template <>
@@ -2013,24 +2013,8 @@ namespace FSerializationUtility
         (void)InOutPointer;
         (void)Out;
     }
-    //********************************* Generated for struct std::filesystem::_Dir_enum_impl::_Creator::_Create_status *********************************
-    template <>
-    inline void Serialize(vector<byte>& Out, const std::filesystem::_Dir_enum_impl::_Creator::_Create_status& Value)
-    {
-        (void)Out;
-        (void)Value;
-        Serialize(Out, Value._Should_create_impl);
-        Serialize(Out, Value._Error);
-    }
+    // struct std::filesystem::_Dir_enum_impl::_Creator::_Create_status is ignored 
 
-    template <>
-    inline void Deserialize(const byte*& InOutPointer, std::filesystem::_Dir_enum_impl::_Creator::_Create_status& Out)
-    {
-        (void)InOutPointer;
-        (void)Out;
-        Deserialize(InOutPointer, Out._Should_create_impl);
-        Deserialize(InOutPointer, Out._Error);
-    }
     // struct std::filesystem::_Directory_entry_proxy is ignored 
 
     //********************************* Generated for struct std::filesystem::_Should_recurse_result *********************************
@@ -2207,7 +2191,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, Value.Mutex);
+        // (blacklisted)Serialize(Out, Value.Mutex);
         Serialize(Out, Value.Messages);
         Serialize(Out, Value.Events);
     }
@@ -2217,7 +2201,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, Out.Mutex);
+        // (blacklisted)Deserialize(InOutPointer, Out.Mutex);
         Deserialize(InOutPointer, Out.Messages);
         Deserialize(InOutPointer, Out.Events);
     }
