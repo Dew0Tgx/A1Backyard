@@ -43,8 +43,8 @@ public:
 		return false;
 	}
 
-	void SetConnectDelegate(delegate<void(const FNetworkAddress&)> Value);
-	void SetDisconnectDelegate(delegate<void(const FNetworkAddress&)> Value);
+	void SetOnConnectDelegate(delegate<void(const FNetworkAddress&)> Value);
+	void SetOnDisconnectDelegate(delegate<void(const FNetworkAddress&)> Value);
 
 private:	
 	SNetworkLowLevel LowLevel{};

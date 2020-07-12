@@ -40,6 +40,7 @@
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/File/FileUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Hash/HashUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelPublicTypes.h"
+#include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/RPC/RPCUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelTypes.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelValues.h"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/xiosbase"
@@ -2184,6 +2185,20 @@ namespace FSerializationUtility
         (void)Out;
         Deserialize(InOutPointer, Out.IPV6);
         Deserialize(InOutPointer, Out.Port);
+    }
+    //********************************* Generated for struct FRPCLifecycle *********************************
+    template <>
+    inline void Serialize(vector<byte>& Out, const FRPCLifecycle& Value)
+    {
+        (void)Out;
+        (void)Value;
+    }
+
+    template <>
+    inline void Deserialize(const byte*& InOutPointer, FRPCLifecycle& Out)
+    {
+        (void)InOutPointer;
+        (void)Out;
     }
     //********************************* Generated for struct FNetworkAsyncData *********************************
     template <>

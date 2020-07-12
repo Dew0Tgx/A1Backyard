@@ -52,7 +52,7 @@ void SBackyard::Initialize()
 {
 	ShowWindow(GetConsoleWindow(), SW_SHOW);
 
-	Network.SetConnectDelegate(
+	Network.SetOnConnectDelegate(
 		[this](const FNetworkAddress& Address)
 		{
 			Debugf("Player %s connected", FStringUtility::ToString(Address).c_str());
@@ -63,7 +63,7 @@ void SBackyard::Initialize()
 		});
 
 
-	Network.SetDisconnectDelegate(
+	Network.SetOnDisconnectDelegate(
 		[this](const FNetworkAddress& Address)
 		{
 			if (HPlayerState PlayerHandle = Players.Find(

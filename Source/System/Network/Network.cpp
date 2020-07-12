@@ -19,12 +19,12 @@ SNetwork::SNetwork()
 {
 }
 
-void SNetwork::SetConnectDelegate(const delegate<void(const FNetworkAddress&)> Value)
+void SNetwork::SetOnConnectDelegate(const delegate<void(const FNetworkAddress&)> Value)
 {
 	ConnectDelegate = Value;
 }
 
-void SNetwork::SetDisconnectDelegate(const delegate<void(const FNetworkAddress&)> Value)
+void SNetwork::SetOnDisconnectDelegate(const delegate<void(const FNetworkAddress&)> Value)
 {
 	DisconnectDelegate = Value;
 }
@@ -54,7 +54,7 @@ void SNetwork::ProcessBackyardRPC(const vector<byte>& InBytes, const FNetworkAdd
 	FSerializationUtility::Deserialize(Pointer, FunctionHash);
 	FSerializationUtility::Deserialize(Pointer, Bytes);
 
-	FRPCUtility::Execute(Hash("SBackyard"), FunctionHash, SourceAddress, Bytes);
+	FRPCUtility::ExecuteRemote(Hash("SBackyard"), FunctionHash, SourceAddress, Bytes);
 }
 
 void SNetwork::Tick()
