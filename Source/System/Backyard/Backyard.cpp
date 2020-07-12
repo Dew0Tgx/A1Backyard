@@ -1,6 +1,8 @@
 #include "Backyard.h"
 
-#include "Generated/SerializationUtility.gen.inl"
+#include "Windows.h"
+
+#include "Generated/Generated.inl"
 
 namespace BackyardLocal
 {

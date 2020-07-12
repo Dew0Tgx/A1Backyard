@@ -2,6 +2,8 @@
 
 #include "System/Backyard/Backyard.h"
 
+#include "Generated/Generated.inl"
+
 namespace NerworkLocal
 {
 	constexpr uint16 BackyardServerPort = 27030;
@@ -70,7 +72,7 @@ void SNetwork::Tick()
 		{
 			Debugf(
 				"Event %s from Client %s with description %s",
-				NetworkLowLevelUtility::ToString(Event.Type).c_str(),
+				FStringUtility::ToString(Event.Type),
 				FStringUtility::ToString(Event.Address).c_str(),
 				Event.Description.c_str());
 

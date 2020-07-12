@@ -23,7 +23,7 @@ include_directories( ${A1_BACKYARD_SOURCE} )
 
 file(MAKE_DIRECTORY "${A1_BACKYARD_SOURCE}/Generated")
 file(TOUCH "${A1_BACKYARD_SOURCE}/Generated/Debug.txt")
-file(TOUCH "${A1_BACKYARD_SOURCE}/Generated/SerializationUtility.gen.inl")
+file(TOUCH "${A1_BACKYARD_SOURCE}/Generated/Generated.inl")
 
 # look-up over all files
 file(GLOB_RECURSE A1_BACKYARD_ALL
