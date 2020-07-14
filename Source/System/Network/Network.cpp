@@ -4,9 +4,8 @@
 
 #include "Generated/Generated.inl"
 
-namespace NerworkLocal
+namespace NetworkLocal
 {
-	constexpr uint16 BackyardServerPort = 27030;
 	constexpr size UnderflowProtectedBufferSize = 1024;
 }
 
@@ -14,21 +13,11 @@ void SNetwork::Initialize()
 {
 	LowLevel.Initialize();
 
-	BackyardServerHandle = LowLevel.CreateServer(NerworkLocal::BackyardServerPort);
+	BackyardServerHandle = LowLevel.CreateServer(Network::BackyardServerPort);
 }
 
 SNetwork::SNetwork()
 {
-}
-
-void SNetwork::SetOnConnectDelegate(const delegate<void(const FNetworkAddress&)> Value)
-{
-	ConnectDelegate = Value;
-}
-
-void SNetwork::SetOnDisconnectDelegate(const delegate<void(const FNetworkAddress&)> Value)
-{
-	DisconnectDelegate = Value;
 }
 
 void SNetwork::BackyardResponseImpl(hash FunctionHash, FNetworkAddress Address, const vector<byte>& Bytes)
@@ -44,8 +33,8 @@ void SNetwork::BackyardResponseImpl(hash FunctionHash, FNetworkAddress Address, 
 
 void SNetwork::ProcessBackyardRPC(const vector<byte>& InBytes, const FNetworkAddress& SourceAddress)
 {
-	byte UnderflowProtectedBytes[NerworkLocal::UnderflowProtectedBufferSize];
-	const size Size = FMathUtility::Min(NerworkLocal::UnderflowProtectedBufferSize, InBytes.size());
+	byte UnderflowProtectedBytes[NetworkLocal::UnderflowProtectedBufferSize];
+	const size Size = FMathUtility::Min(NetworkLocal::UnderflowProtectedBufferSize, InBytes.size());
 	Warnf(Size == InBytes.size(), "RPC contains too much bytes");
 	memcpy(UnderflowProtectedBytes, InBytes.data(), Size);
 	
@@ -68,30 +57,23 @@ void SNetwork::Tick()
 
 	for (const FNetworkEvent& Event : Events)
 	{
-		if (LowLevel.ServerHasConnection(BackyardServerHandle, Event.Address))
-		{
-			Debugf(
-				"Event %s from Client %s with description %s",
-				FStringUtility::ToString(Event.Type),
-				FStringUtility::ToString(Event.Address).c_str(),
-				Event.Description.c_str());
+		Debugf(
+			"Event %s from Client %s with description %s",
+			FStringUtility::ToString(Event.Type),
+			FStringUtility::ToString(Event.Address).c_str(),
+			Event.Description.c_str());
 
-			switch (Event.Type)
-			{
-			case ENetworkEventType::Connected:
-				if (ConnectDelegate) ConnectDelegate(Event.Address);
-				break;
-			case ENetworkEventType::FailedToConnect:
-				break;
-			case ENetworkEventType::Disconnected:
-				if (DisconnectDelegate) DisconnectDelegate(Event.Address);
-				break;
-			default: Prevent();
-			}
-		}
-		else
+		switch (Event.Type)
 		{
-			Debugf("Unexpected network event dropped from %s", FStringUtility::ToString(Event.Address).c_str());
+		case ENetworkEventType::Connected:
+			if (OnBackyardServerClientConnectedDelegate) OnBackyardServerClientConnectedDelegate(Event.Address);
+			break;
+		case ENetworkEventType::FailedToConnect:
+			break;
+		case ENetworkEventType::Disconnected:
+			if (OnBackyardServerClientDisconnectedDelegate) OnBackyardServerClientDisconnectedDelegate(Event.Address);
+			break;
+		default: Prevent();
 		}
 	}
 
@@ -118,4 +100,14 @@ void SNetwork::Tick()
 void SNetwork::Deinitialize()
 {
 	LowLevel.Deinitialize();
+}
+
+void SNetwork::SetOnBackyardServerClientConnectedDelegate(delegate<void(const FNetworkAddress&)> Value)
+{
+	OnBackyardServerClientConnectedDelegate = Value;
+}
+
+void SNetwork::SetOnBackyardServerClientDisconnectedDelegate(delegate<void(const FNetworkAddress&)> Value)
+{
+	OnBackyardServerClientDisconnectedDelegate = Value;
 }

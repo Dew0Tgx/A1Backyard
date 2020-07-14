@@ -8,7 +8,8 @@ struct HPlayerState : HHandle
 
 enum class EPlayerState : uint32
 {
-	None,
+	BecomingIdle,
+	Idle,
 	BecomingGameServer,
 	GameServer,
 	BecomingGameClient,
@@ -30,7 +31,7 @@ struct FServerState
 
 struct FClientState
 {
-	HPlayerState Server;
+	HPlayerState ServerPlayerHandle;
 };
 
 struct FPlayerState

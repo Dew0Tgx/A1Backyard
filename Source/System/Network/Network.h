@@ -3,6 +3,12 @@
 #include "NetworkHandles.h"
 #include "NetworkValues.h"
 
+namespace Network
+{
+	constexpr uint16 GameServerPort = 27020;
+	constexpr uint16 BackyardServerPort = 27030;
+}
+
 class SNetwork
 {
 public:
@@ -43,14 +49,14 @@ public:
 		return false;
 	}
 
-	void SetOnConnectDelegate(delegate<void(const FNetworkAddress&)> Value);
-	void SetOnDisconnectDelegate(delegate<void(const FNetworkAddress&)> Value);
+	void SetOnBackyardServerClientConnectedDelegate(delegate<void(const FNetworkAddress&)> Value);
+	void SetOnBackyardServerClientDisconnectedDelegate(delegate<void(const FNetworkAddress&)> Value);
 
 private:	
 	SNetworkLowLevel LowLevel{};
 
-	delegate<void(const FNetworkAddress&)> ConnectDelegate;
-	delegate<void(const FNetworkAddress&)> DisconnectDelegate;
+	delegate<void(const FNetworkAddress&)> OnBackyardServerClientConnectedDelegate;
+	delegate<void(const FNetworkAddress&)> OnBackyardServerClientDisconnectedDelegate;
 
 	HNetworkServer BackyardServerHandle{ HHandle::Empty };
 

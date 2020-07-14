@@ -2582,7 +2582,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        Serialize(Out, Value.Server);
+        Serialize(Out, Value.ServerPlayerHandle);
     }
 
     template <>
@@ -2590,7 +2590,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        Deserialize(InOutPointer, Out.Server);
+        Deserialize(InOutPointer, Out.ServerPlayerHandle);
     }
     //********************************* Generated for struct FPlayerState *********************************
     template <>
@@ -3217,25 +3217,13 @@ namespace FStringUtility
     {
         switch(Enum)
         {
-        case EPlayerState::None: return "None";
+        case EPlayerState::BecomingIdle: return "BecomingIdle";
+        case EPlayerState::Idle: return "Idle";
         case EPlayerState::BecomingGameServer: return "BecomingGameServer";
         case EPlayerState::GameServer: return "GameServer";
         case EPlayerState::BecomingGameClient: return "BecomingGameClient";
         case EPlayerState::GameClient: return "GameClient";
         case EPlayerState::GameServerStarted: return "GameServerStarted";
-        default: Prevent();
-        }
-        return "";
-    }
-
-    //********************************* Generated for enum ENetworkState *********************************
-    inline const char* ToString(const ENetworkState& Enum)
-    {
-        switch(Enum)
-        {
-        case ENetworkState::Idle: return "Idle";
-        case ENetworkState::GameServer: return "GameServer";
-        case ENetworkState::GameClient: return "GameClient";
         default: Prevent();
         }
         return "";

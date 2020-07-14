@@ -6,7 +6,7 @@ struct HPlayerState : public HHandle {};
 
 enum class EPlayerState : uint32
 {
-	None,
+	Idle,
 	BecomingGameServer,
 	GameServer,
 	BecomingGameClient,

@@ -84,7 +84,12 @@ public:
 	void Deinitialize();
 
 	void BackyardRequestPlay(const FNetworkAddress& Address);
+	void BackyardRequestBecameIdle(const FNetworkAddress& Address);
+	// void BackyardRequestFailedToBecomeGameServer(const FNetworkAddress& Address);
 	void BackyardRequestBecameGameServer(const FNetworkAddress& Address);
+	void BackyardRequestFailedToBecomeGameClient(const FNetworkAddress& Address);
+	void BackyardRequestBecameGameClient(const FNetworkAddress& Address);
+	void BackyardResponseBecomeIdle(const FNetworkAddress& Address);
 	void BackyardResponseBecomeGameServer(const FNetworkAddress& Address);
 	void BackyardResponseBecomeGameClient(const FNetworkAddress& Address, const FNetworkAddress& GameServerAddress);
 
