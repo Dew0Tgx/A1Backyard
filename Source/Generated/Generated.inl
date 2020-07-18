@@ -36,14 +36,12 @@
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/filesystem"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/mutex"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Handle/Handle.h"
-#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/random"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/File/FileUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Hash/HashUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelPublicTypes.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/RPC/RPCUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelTypes.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelValues.h"
-#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/xiosbase"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelHandles.h"
 #include "F:/Source/A1/ThirdParty/A1Backyard/CMake/../Source/System/Backyard/BackyardTypes.h"
 
@@ -308,7 +306,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::integral_constant<unsigned long long, 0>&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::integral_constant<unsigned long long, 0>&>(Value));
     }
 
     template <>
@@ -316,7 +314,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::integral_constant<unsigned long long, 0>&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::integral_constant<unsigned long long, 0>&>(Out));
     }
     //********************************* Generated for struct std::common_type<> *********************************
     template <>
@@ -758,7 +756,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -766,7 +764,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::_Is_character<signed char> *********************************
     template <>
@@ -774,7 +772,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -782,7 +780,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::_Is_character<unsigned char> *********************************
     template <>
@@ -790,7 +788,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -798,7 +796,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::_Is_character_or_byte<std::byte> *********************************
     template <>
@@ -806,7 +804,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -814,7 +812,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     // struct std::_Equal_memcmp_is_safe_helper<std::byte, std::byte, equal_to<> > is ignored 
 
@@ -824,7 +822,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -832,7 +830,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::_Lex_compare_check_element_types_helper<std::byte, std::byte, void> *********************************
     template <>
@@ -840,7 +838,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -848,7 +846,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::allocator_arg_t *********************************
     template <>
@@ -1448,7 +1446,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -1456,7 +1454,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::is_error_condition_enum<std::errc> *********************************
     template <>
@@ -1464,7 +1462,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::true_type&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::true_type&>(Value));
     }
 
     template <>
@@ -1472,7 +1470,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::true_type&>(Out));
     }
     //********************************* Generated for struct std::hash<std::error_code> *********************************
     template <>
@@ -1516,29 +1514,13 @@ namespace FSerializationUtility
         (void)InOutPointer;
         (void)Out;
     }
-    //********************************* Generated for struct std::locale::_Facet_guard *********************************
-    template <>
-    inline void Serialize(vector<byte>& Out, const std::locale::_Facet_guard& Value)
-    {
-        (void)Out;
-        (void)Value;
-        // (blacklisted)Serialize(Out, Value._Target);
-    }
-
-    template <>
-    inline void Deserialize(const byte*& InOutPointer, std::locale::_Facet_guard& Out)
-    {
-        (void)InOutPointer;
-        (void)Out;
-        // (blacklisted)Deserialize(InOutPointer, Out._Target);
-    }
     //********************************* Generated for struct std::ctype_base *********************************
     template <>
     inline void Serialize(vector<byte>& Out, const std::ctype_base& Value)
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::locale::facet&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::locale::facet&>(Value));
     }
 
     template <>
@@ -1546,7 +1528,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
     }
     //********************************* Generated for struct ska::prime_number_hash_policy *********************************
     template <>
@@ -1596,7 +1578,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::locale::facet&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::locale::facet&>(Value));
     }
 
     template <>
@@ -1604,7 +1586,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
     }
     //********************************* Generated for struct std::money_base *********************************
     template <>
@@ -1612,7 +1594,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::locale::facet&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::locale::facet&>(Value));
     }
 
     template <>
@@ -1620,7 +1602,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
     }
     //********************************* Generated for struct std::money_base::pattern *********************************
     template <>
@@ -1644,7 +1626,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::locale::facet&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::locale::facet&>(Value));
     }
 
     template <>
@@ -1652,7 +1634,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::locale::facet&>(Out));
     }
     //********************************* Generated for struct std::_Gcd<0, 0> *********************************
     template <>
@@ -1660,7 +1642,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::integral_constant<long long, 1>&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::integral_constant<long long, 1>&>(Value));
     }
 
     template <>
@@ -1668,7 +1650,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::integral_constant<long long, 1>&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::integral_constant<long long, 1>&>(Out));
     }
     //********************************* Generated for struct std::_Big_uint128 *********************************
     template <>
@@ -1736,7 +1718,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::logic_error&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::logic_error&>(Value));
     }
 
     template <>
@@ -1744,7 +1726,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::logic_error&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::logic_error&>(Out));
     }
     //********************************* Generated for struct gsl::narrowing_error *********************************
     template <>
@@ -1752,7 +1734,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::exception&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::exception&>(Value));
     }
 
     template <>
@@ -1760,7 +1742,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::exception&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::exception&>(Out));
     }
     //********************************* Generated for struct gsl::static_bounds_dynamic_range_t *********************************
     template <>
@@ -2120,22 +2102,6 @@ namespace FSerializationUtility
         Deserialize(InOutPointer, Out.Class);
         Deserialize(InOutPointer, Out.UID);
     }
-    //********************************* Generated for struct std::bernoulli_distribution::param_type *********************************
-    template <>
-    inline void Serialize(vector<byte>& Out, const std::bernoulli_distribution::param_type& Value)
-    {
-        (void)Out;
-        (void)Value;
-        Serialize(Out, Value._Px);
-    }
-
-    template <>
-    inline void Deserialize(const byte*& InOutPointer, std::bernoulli_distribution::param_type& Out)
-    {
-        (void)InOutPointer;
-        (void)Out;
-        Deserialize(InOutPointer, Out._Px);
-    }
     //********************************* Generated for struct FFileUtility::FFileCache *********************************
     template <>
     inline void Serialize(vector<byte>& Out, const FFileUtility::FFileCache& Value)
@@ -2322,10 +2288,6 @@ namespace FSerializationUtility
         (void)Out;
         Deserialize(InOutPointer, static_cast<std::_Num_base&>(Out));
     }
-    // struct std::ios_base::_Iosarray is ignored 
-
-    // struct std::ios_base::_Fnarray is ignored 
-
     //********************************* Generated for struct gsl::contiguous_mapping_tag *********************************
     template <>
     inline void Serialize(vector<byte>& Out, const gsl::contiguous_mapping_tag& Value)
@@ -2386,7 +2348,7 @@ namespace FSerializationUtility
     {
         (void)Out;
         (void)Value;
-        // Serialize(Out, static_cast<const std::filesystem::_Dir_enum_impl&>(Value));
+        // (blacklisted)Serialize(Out, static_cast<const std::filesystem::_Dir_enum_impl&>(Value));
         Serialize(Out, Value._Stack);
         Serialize(Out, Value._Options);
         Serialize(Out, Value._Recursion_pending);
@@ -2397,7 +2359,7 @@ namespace FSerializationUtility
     {
         (void)InOutPointer;
         (void)Out;
-        // Deserialize(InOutPointer, static_cast<std::filesystem::_Dir_enum_impl&>(Out));
+        // (blacklisted)Deserialize(InOutPointer, static_cast<std::filesystem::_Dir_enum_impl&>(Out));
         Deserialize(InOutPointer, Out._Stack);
         Deserialize(InOutPointer, Out._Options);
         Deserialize(InOutPointer, Out._Recursion_pending);
@@ -2799,19 +2761,6 @@ namespace FStringUtility
         return "";
     }
 
-    //********************************* Generated for enum std::ios_base::event *********************************
-    inline const char* ToString(const std::ios_base::event& Enum)
-    {
-        switch(Enum)
-        {
-        case std::ios_base::event::erase_event: return "erase_event";
-        case std::ios_base::event::imbue_event: return "imbue_event";
-        case std::ios_base::event::copyfmt_event: return "copyfmt_event";
-        default: Prevent();
-        }
-        return "";
-    }
-
     //********************************* Generated for enum std::time_base::dateorder *********************************
     inline const char* ToString(const std::time_base::dateorder& Enum)
     {
@@ -3004,19 +2953,6 @@ namespace FStringUtility
         case __std_fs_copy_options::_Skip_existing: return "_Skip_existing";
         case __std_fs_copy_options::_Overwrite_existing: return "_Overwrite_existing";
         case __std_fs_copy_options::_Update_existing: return "_Update_existing";
-        default: Prevent();
-        }
-        return "";
-    }
-
-    //********************************* Generated for enum std::filesystem::path::format *********************************
-    inline const char* ToString(const std::filesystem::path::format& Enum)
-    {
-        switch(Enum)
-        {
-        case std::filesystem::path::format::auto_format: return "auto_format";
-        case std::filesystem::path::format::native_format: return "native_format";
-        case std::filesystem::path::format::generic_format: return "generic_format";
         default: Prevent();
         }
         return "";
