@@ -18,6 +18,7 @@
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/iosfwd"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/memory"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/vector"
+#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/xstring"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/functional"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/xcall_once.h"
 #include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/system_error"
@@ -40,10 +41,17 @@
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Hash/HashUtility.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelPublicTypes.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/RPC/RPCUtility.h"
+#include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelHandles.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelTypes.h"
 #include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelValues.h"
-#include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Network/NetworkLowLevelHandles.h"
 #include "F:/Source/A1/ThirdParty/A1Backyard/CMake/../Source/System/Backyard/BackyardTypes.h"
+#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/yvals.h"
+#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/cstddef"
+#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/xatomic.h"
+#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/xerrc.h"
+#include "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/include/codecvt"
+#include "F:/Source/A1/ThirdParty/A1Utility/CMake/../Source/Utility/Math/MathTypes.h"
+#include "F:/Source/A1/CMake/../ThirdParty/GameNetworkingSockets/include/steam/steamuniverse.h"
 
 
 namespace FSerializationUtility
