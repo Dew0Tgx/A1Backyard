@@ -30,7 +30,7 @@ public:
 		(void)FunctionHash;
 		return true;
 	}
-	
+
 	bool BackyardResponse(const hash FunctionHash, FNetworkAddress Address)
 	{
 		BackyardResponseImpl(FunctionHash, Address, {});
@@ -52,16 +52,15 @@ public:
 	void SetOnBackyardServerClientConnectedDelegate(delegate<void(const FNetworkAddress&)> Value);
 	void SetOnBackyardServerClientDisconnectedDelegate(delegate<void(const FNetworkAddress&)> Value);
 
-private:	
+private:
 	SNetworkLowLevel LowLevel{};
 
 	delegate<void(const FNetworkAddress&)> OnBackyardServerClientConnectedDelegate;
 	delegate<void(const FNetworkAddress&)> OnBackyardServerClientDisconnectedDelegate;
 
-	HNetworkServer BackyardServerHandle{ HHandle::Empty };
+	HNetworkServer BackyardServerHandle{HHandle::Empty};
 
-	void BackyardResponseImpl(hash FunctionHash, FNetworkAddress Address, const vector<byte> & Bytes);
-	
+	void BackyardResponseImpl(hash FunctionHash, FNetworkAddress Address, const vector<byte>& Bytes);
+
 	void ProcessBackyardRPC(const vector<byte>& InBytes, const FNetworkAddress& SourceAddress);
-	
 };

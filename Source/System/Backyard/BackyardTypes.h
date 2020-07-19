@@ -38,7 +38,7 @@ struct FPlayerState
 {
 	FNetworkAddress Address;
 	EPlayerState State;
-	
+
 	FServerState ServerState;
 	FClientState ClientState;
 };

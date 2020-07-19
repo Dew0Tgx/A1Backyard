@@ -2,7 +2,9 @@
 
 #include "Core.h"
 
-struct HPlayerState : public HHandle {};
+struct HPlayerState : public HHandle
+{
+};
 
 enum class EPlayerState : uint32
 {
@@ -28,7 +30,7 @@ struct FServerState
 
 struct FClientState
 {
-	HPlayerState Server;	
+	HPlayerState Server;
 };
 
 struct FPlayerState

@@ -37,7 +37,7 @@ void SNetwork::ProcessBackyardRPC(const vector<byte>& InBytes, const FNetworkAdd
 	const size Size = FMathUtility::Min(NetworkLocal::UnderflowProtectedBufferSize, InBytes.size());
 	Warnf(Size == InBytes.size(), "RPC contains too much bytes");
 	memcpy(UnderflowProtectedBytes, InBytes.data(), Size);
-	
+
 	hash FunctionHash;
 	vector<byte> Bytes;
 

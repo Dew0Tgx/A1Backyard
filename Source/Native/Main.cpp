@@ -17,25 +17,26 @@ int main(const int argc, char* argv[])
 	string HelpInfo;
 	HelpInfo += "Available commands:\n";
 	HelpInfo += "exit\n";
-	
-	SNetwork Network;	
+
+	SNetwork Network;
 	Debugf("Initializing Network...");
 	Network.Initialize();
 
 	SBackyard Backyard(Network);
 	Debugf("Initializing Backyard...");
 	Backyard.Initialize();
-	
-	while(!ExitFlag)
+
+	while (!ExitFlag)
 	{
-		char LineBuffer[1024] = { 0 };
+		char LineBuffer[1024] = {0};
 		cin.getline(LineBuffer, sizeof(LineBuffer));
 
 		string Line = LineBuffer;
-		if(Line == "exit")
+		if (Line == "exit")
 		{
 			ExitFlag = true;
-		} else
+		}
+		else
 		{
 			Debugf("%s", HelpInfo.c_str());
 		}
@@ -43,10 +44,10 @@ int main(const int argc, char* argv[])
 
 	Debugf("Deinitializing Backyard...");
 	Backyard.Deinitialize();
-	
+
 	Debugf("Deinitializing Network...");
 	Network.Deinitialize();
 
-	
+
 	return 0;
 }

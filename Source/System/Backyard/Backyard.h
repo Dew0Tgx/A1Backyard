@@ -98,8 +98,7 @@ private:
 
 	THandleStorage<HPlayerState, FPlayerState, 0> Players;
 
-	bool ExitFlag{ false };
+	bool ExitFlag{false};
 
 	void Update();
-
 };
