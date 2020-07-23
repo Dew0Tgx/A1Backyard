@@ -15,7 +15,7 @@
 # Build results
 [Bb]uild/*
 .[Bb]uild/*
-Source/Generated/Debug.txt
+Source/Generated/*
 x64/
 x86/
 bld/

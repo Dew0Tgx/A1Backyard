@@ -12,6 +12,7 @@ int main(const int argc, char* argv[])
 	(void)argc;
 	(void)argv;
 
+	FDebugUtility::Initialize("log.txt");
 	FTimeUtility::Impl::InitializeTime();
 
 	string HelpInfo;
