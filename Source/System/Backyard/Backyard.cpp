@@ -1,7 +1,5 @@
 #include "Backyard.h"
 
-#include "Windows.h"
-
 #include "Generated/Generated.inl"
 
 namespace BackyardLocal
