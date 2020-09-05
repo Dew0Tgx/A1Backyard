@@ -27,6 +27,7 @@ int main(const int argc, char* argv[])
 	Debugf("Initializing Backyard...");
 	Backyard.Initialize();
 
+	Debugf("Backayrd is Running");
 	while (!ExitFlag)
 	{
 		char LineBuffer[1024] = {0};
@@ -48,7 +49,8 @@ int main(const int argc, char* argv[])
 
 	Debugf("Deinitializing Network...");
 	Network.Deinitialize();
-
-
+	
+	Debugf("Backayrd is Stopped");
+	
 	return 0;
 }
