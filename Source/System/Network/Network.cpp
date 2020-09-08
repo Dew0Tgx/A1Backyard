@@ -13,7 +13,7 @@ void SNetwork::Initialize()
 {
 	LowLevel.Initialize();
 
-	BackyardServerHandle = LowLevel.CreateServer(Network::BackyardServerPort);
+	BackyardServerHandle = LowLevel.CreateServer(FNetwork::BackyardServerPort);
 }
 
 SNetwork::SNetwork()

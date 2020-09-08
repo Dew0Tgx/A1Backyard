@@ -185,7 +185,7 @@ void SBackyard::BackyardRequestPlay(const FNetworkAddress& Address)
 			Player.State = EPlayerState::BecomingGameClient;
 			Player.ClientState.ServerPlayerHandle = ServerPlayerHandle;
 			FNetworkAddress GameServerAddress = GameServerPlayer.Address;
-			GameServerAddress.Port = Network::GameServerPort;
+			GameServerAddress.Port = FNetwork::GameServerPort;
 			BackyardResponseBecomeGameClient(Address, GameServerAddress);
 		} else
 		{

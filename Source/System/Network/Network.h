@@ -3,7 +3,7 @@
 #include "NetworkHandles.h"
 #include "NetworkValues.h"
 
-namespace Network
+namespace FNetwork
 {
 	constexpr uint16 GameServerPort = 27020;
 	constexpr uint16 BackyardServerPort = 27030;

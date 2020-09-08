@@ -115,11 +115,12 @@ endforeach()
 
 add_custom_command( 
 	OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/Code Generation for Backyard"
-	COMMAND "$<TARGET_FILE:A1CodeGen>" "${A1_BACKYARD_SOURCE}/Native/Main.cpp" "${A1_BACKYARD_SOURCE}" "${A1_BACKYARD_SOURCE}/Generated" "Backyard" "${CodeGenArgs}"
+	COMMAND "$<TARGET_FILE:A1CodeGen>" "${A1_BACKYARD_SOURCE}" "${A1_BACKYARD_SOURCE}/Generated" "A1Backyard" "${CodeGenArgs}"
 	# MAIN_DEPENDENCY ${ARG_FILE}
 	COMMENT "Generating Code for A1Backyard"
 	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
-message("A1Backyard code gen args:")
-message("${A1_BACKYARD_SOURCE}/Native/Main.cpp ${A1_BACKYARD_SOURCE}/Generated ${CodeGenArgs}")
+#set_target_properties(A1CodeGen PROPERTIES 
+#    VS_DEBUGGER_COMMAND "\$(TargetPath)"
+#    VS_DEBUGGER_COMMAND_ARGUMENTS "${A1_BACKYARD_SOURCE} ${A1_BACKYARD_SOURCE}/Generated A1Backyard ${CodeGenArgs}")
