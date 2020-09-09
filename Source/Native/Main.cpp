@@ -12,8 +12,8 @@ int main(const int argc, char* argv[])
 	(void)argc;
 	(void)argv;
 
-	FDebugUtility::Initialize("log.txt", true);
 	FTimeUtility::Impl::InitializeTime();
+	FDebugUtility::Initialize("Log.txt", true);
 
 	string HelpInfo;
 	HelpInfo += "Available commands:\n";
