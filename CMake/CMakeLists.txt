@@ -1,4 +1,4 @@
-project(A1Backyard)
+	project(A1Backyard)
 cmake_minimum_required(VERSION 3.8)
 set_property( GLOBAL PROPERTY USE_FOLDERS ON )
 
@@ -123,4 +123,5 @@ add_custom_command(
 
 #set_target_properties(A1CodeGen PROPERTIES 
 #    VS_DEBUGGER_COMMAND "\$(TargetPath)"
-#    VS_DEBUGGER_COMMAND_ARGUMENTS "${A1_BACKYARD_SOURCE} ${A1_BACKYARD_SOURCE}/Generated A1Backyard ${CodeGenArgs}")
+#    VS_DEBUGGER_COMMAND_ARGUMENTS "${A1_BACKYARD_SOURCE} ${A1_BACKYARD_SOURCE}/Generated A1Backyard ${CodeGenArgs}"
+#	 VS_DEBUGGER_WORKING_DIRECTORY "${A1_SOURCE}")
