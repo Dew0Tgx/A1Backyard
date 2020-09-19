@@ -13,7 +13,7 @@ int main(const int argc, char* argv[])
 	(void)argv;
 
 	FTimeUtility::Impl::InitializeTime();
-	FDebugUtility::Initialize("Log.txt", true);
+	FDebugUtility::Initialize("Log.txt", true, false);
 
 	string HelpInfo;
 	HelpInfo += "Available commands:\n";
