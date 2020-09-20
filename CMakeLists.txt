@@ -1,8 +1,8 @@
 project(A1Backyard)
 cmake_minimum_required(VERSION 3.8)
 
-set(CMAKE_C_FLAGS 	"${CMAKE_C_FLAGS} 	-Wall -Wextra -Werror")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
+set(CMAKE_C_FLAGS 	"${CMAKE_C_FLAGS} 	-Wall -Wextra -Werror -Wno-missing-braces")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wno-missing-braces")
 
 set(A1_BACKYARD_ROOT "${CMAKE_CURRENT_SOURCE_DIR}")
 set(A1_BACKYARD_SOURCE "${A1_BACKYARD_ROOT}/Source")
@@ -21,6 +21,8 @@ file(GLOB_RECURSE A1_BACKYARD_ALL
 	"${A1_BACKYARD_SOURCE}/*.txt"
 	"${A1_BUILD}/*.natvis"
 )
+
+include_directories( ${A1_BACKYARD_SOURCE} )
 
 add_executable(A1Backyard
 	${A1_BACKYARD_ALL}
