@@ -2,6 +2,8 @@
 
 #include "Generated/Generated.inl"
 
+#include <Windows.h>
+
 namespace BackyardLocal
 {
 	static constexpr int32 UpdatePeriodMilliseconds = 100;
