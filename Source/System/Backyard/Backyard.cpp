@@ -2,7 +2,9 @@
 
 #include "Generated/Generated.inl"
 
+#ifdef WIN32
 #include <Windows.h>
+#endif
 
 namespace BackyardLocal
 {
@@ -103,8 +105,9 @@ SBackyard::SBackyard(SNetwork& Network)
 
 void SBackyard::Initialize()
 {
-	ShowWindow(GetConsoleWindow(), SW_SHOW);
-
+#ifdef WIN32
+    ShowWindow(GetConsoleWindow(), SW_SHOW);
+#endif
 	Network.SetOnBackyardServerClientConnectedDelegate(
 		[this](const FNetworkAddress& Address)
 		{
